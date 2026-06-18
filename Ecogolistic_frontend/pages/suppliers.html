@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChainGuard // Supplier Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="suppliers"> <!-- Ubah data-page ke "suppliers" -->
+    <div class="app-layout">
+        
+        <aside class="noir-sidebar">
+            <div class="sidebar-brand"><h2>ECOVESSEL//AI</h2><span>V2.5.0 Maritime Live</span></div>
+            <nav class="sidebar-nav">
+                <a href="../index.html" class="nav-btn" style="border: 1px dashed #ef4444; color: #ef4444;">⚓ UPLOAD MANIFEST</a>
+                <a href="fleet-registry.html" class="nav-btn">FLEET REGISTRY</a>
+                <a href="ai-forecast.html" class="nav-btn">AI RISK FORECAST</a>
+                <a href="suppliers.html" class="nav-btn active">SUPPLIER NETWORK</a>
+                <a href="sustainability.html" class="nav-btn">SUSTAINABILITY AUDIT</a>
+                <a href="active-alerts.html" class="nav-btn">ACTIVE ALERTS</a>
+                <a href="trend-analysis.html" class="nav-btn">TREND ANALYSIS</a>
+            </nav>
+            <div class="sidebar-footer"><p>LOC: PADANG, ID</p><span id="live-clock">00:00:00 WIB</span></div>
+        </aside>
+
+        <div class="main-content">
+            <header class="noir-header">
+                <div>
+                    <h1>SUPPLIER NETWORK</h1>
+                    <p class="status-tag">GLOBAL MARITIME VENDOR PROFILE INDEX</p>
+                </div>
+            </header>
+            
+            <div class="main-panel" style="margin-bottom: 24px;">
+                <div class="panel-header">
+                    <h3>LIVE VENDOR & EMISSION COMPLIANCE REGISTRY</h3>
+                    <span class="endpoint-badge">DATA INTEGRATED</span>
+                </div>
+                
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>VESSEL EXPEDITION</th>
+                                <th>COUNTRY NODE (ORIGIN)</th>
+                                <th>FLEET CATEGORY</th>
+                                <th>CO₂ EMISSION</th>
+                                <th>RISK STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="supplier-table-body">
+                            <tr><td colspan="5" class="table-loading">Extracting supplier profiles from cloud...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PANEL BARU: AI SUPPLIER ECO-OPTIMIZER -->
+            <div class="noir-box" style="background: #18181b; border: 3px solid #fff; padding: 20px;">
+                <div class="panel-header"><h4 style="color:#10b981;">AI SUPPLIER ECO-OPTIMIZER</h4></div>
+                <p style="font-size: 13px; margin: 8px 0; color: #a1a1aa;">
+                    Sistem menganalisis efisiensi emisi *Scope 3* dari seluruh vendor aktif di Cloud:
+                </p>
+                <blockquote id="ai-supplier-advice" style="background: #000; border-left: 4px solid #10b981; padding: 12px; font-family: var(--font-mono); font-size: 12px; margin: 12px 0;">
+                    Calculating eco-efficiency rating indices...
+                </blockquote>
+            </div>
+
+        </div>
+    </div>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

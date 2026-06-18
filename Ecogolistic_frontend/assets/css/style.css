@@ -1,0 +1,406 @@
+/* ═══ NOIR THEME SYSTEM VARIABLES ═══════════════════════════ */
+:root {
+    --bg-pure: #09090b;       
+    --bg-panel: #18181b;      
+    --bg-hover: #27272a;      
+    --border-thick: 3px solid #ffffff; 
+    --border-thin: 1px solid #3f3f46;  
+    --text-white: #ffffff;    
+    --text-gray: #a1a1aa;     
+    --font-sans: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ═══ BASIC RESET ═══════════════════════════════════════════ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-pure);
+    color: var(--text-white);
+    font-family: var(--font-sans);
+    padding: 0;
+    margin: 0;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+/* ═══ SIDEBAR NAVIGATION LAYOUT ═════════════════════════════ */
+.app-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.noir-sidebar {
+    background-color: var(--bg-panel);
+    border-right: 4px solid var(--text-white);
+    padding: 32px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-brand h2 {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.sidebar-brand span {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-gray);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.nav-btn {
+    background: none;
+    border: 1px solid #3f3f46;
+    color: var(--text-gray);
+    padding: 12px 14px;
+    text-align: left;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: var(--text-white);
+    color: var(--bg-pure);
+    border-color: var(--text-white);
+    font-weight: 900;
+}
+
+.sidebar-footer {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-gray);
+}
+
+#live-clock {
+    display: block;
+    color: var(--text-white);
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+/* ═══ MAIN CORE CONTENT KANAN ═══════════════════════════════ */
+.main-content {
+    padding: 32px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.noir-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 4px solid var(--text-white);
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+}
+
+.noir-header h1 {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.status-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-gray);
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+/* ═══ METRICS SUMMARY ROW ═══════════════════════════════════ */
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.card-metric {
+    background-color: var(--bg-panel);
+    border: var(--border-thin);
+    padding: 24px;
+    position: relative;
+}
+
+.card-metric .label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-gray);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.card-metric h2 {
+    font-size: 34px;
+    font-weight: 900;
+    font-family: var(--font-mono);
+}
+
+/* ═══ CONTENT LAYOUT & NESTED BOXES ═════════════════════════ */
+.content-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 24px;
+}
+
+.main-panel, .noir-box {
+    background-color: var(--bg-panel);
+    border: var(--border-thin);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--text-white);
+    padding-left: 12px;
+}
+
+.panel-header h3 {
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.endpoint-badge {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    background-color: #27272a;
+    padding: 4px 8px;
+    color: var(--text-gray);
+}
+
+.noir-box-nested {
+    background-color: var(--bg-pure);
+    border: 1px solid #27272a;
+    padding: 20px;
+}
+
+.info-block-noir h5 {
+    font-size: 14px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.noir-blockquote {
+    border-left: 3px solid #ffffff;
+    padding-left: 14px;
+    font-style: italic;
+    color: var(--text-gray);
+    margin-top: 10px;
+}
+
+/* ═══ DATA TABLE STYLING ════════════════════════════════════ */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    text-align: left;
+    padding: 12px 8px;
+    border-bottom: 2px solid var(--text-white);
+}
+
+td {
+    padding: 16px 8px;
+    border-bottom: 1px solid #27272a;
+    font-size: 13px;
+}
+
+tr:hover td {
+    background-color: var(--bg-hover);
+}
+
+.table-loading {
+    text-align: center;
+    padding: 48px !important;
+    color: var(--text-gray);
+    font-family: var(--font-mono);
+}
+
+/* ═══ DROPZONE & BUTTONS ════════════════════════════════════ */
+.dropzone {
+    border: 2px dashed #52525b;
+    padding: 40px 16px;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--bg-pure);
+}
+
+.dropzone:hover {
+    border-color: var(--text-white);
+    background-color: var(--bg-hover);
+}
+
+.dropzone .icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.file-preview {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-gray);
+    text-align: center;
+    margin-top: 12px;
+}
+
+.btn-noir-primary {
+    display: block;
+    width: 100%;
+    background-color: var(--text-white);
+    color: var(--bg-pure);
+    border: 2px solid var(--text-white);
+    padding: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.btn-noir-primary:hover {
+    background-color: var(--bg-pure);
+    color: var(--text-white);
+}
+
+/* ═══ NOIR MAP WRAPPER SYSTEM ═══ */
+.map-wrapper-noir {
+    display: flex;
+    gap: 16px;
+    background: var(--bg-pure);
+    border: 3px solid #ffffff;
+    padding: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.noir-map-simulation {
+    background-color: var(--bg-pure);
+    border: 1px solid #3f3f46;
+    height: 400px;
+}
+
+/* Tabel Selector Samping Peta (Mode Standar) */
+.map-floating-table {
+    width: 320px;
+    background-color: var(--bg-panel);
+    border: 1px solid #3f3f46;
+    padding: 16px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+/* 🚀 FIX: LOGIKA EXPAND FULLSCREEN BUNDLE (PETA + TABEL IKUT MEMBESAR) */
+.map-wrapper-noir.fullscreen-bundle {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 99999 !important;
+    margin: 0 !important;
+    background: #000000 !important;
+    padding: 24px !important;
+    border: none !important;
+}
+
+.map-wrapper-noir.fullscreen-bundle .noir-map-simulation {
+    height: 100% !important;
+}
+
+.map-wrapper-noir.fullscreen-bundle .map-floating-table {
+    height: 100% !important;
+    width: 380px;
+    border-left: 3px solid #ffffff;
+}
+
+/* ═══ NOIR ALERT STRIPS ═══ */
+.alert-strip-noir {
+    border: 3px solid #fff;
+    background: #000;
+    padding: 20px;
+    margin-bottom: 16px;
+    position: relative;
+}
+.alert-strip-noir.high { border-left: 15px solid #ef4444; }
+.alert-strip-noir.med { border-left: 15px solid #f59e0b; }
+.alert-strip-noir.low { border-left: 15px solid #10b981; }
+
+.strip-header {
+    font-family: var(--font-mono);
+    font-weight: 900;
+    font-size: 14px;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+/* ═══ DYNAMIC CHART STYLE ═══ */
+.chart-box {
+    border: 3px solid #fff;
+    padding: 24px;
+    background: #000;
+    margin-bottom: 20px;
+}
+.bar-row {
+    margin: 16px 0;
+}
+.bar-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    display: block;
+    margin-bottom: 6px;
+}
+.bar-track {
+    background: #27272a;
+    border: 2px solid #fff;
+    height: 24px;
+    width: 100%;
+}
+.bar-fill {
+    background: #fff;
+    height: 100%;
+    width: 0%;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bar-fill.high-risk { background: #ef4444; }
+.bar-fill.med-risk { background: #f59e0b; }
+.bar-fill.low-risk { background: #10b981; }

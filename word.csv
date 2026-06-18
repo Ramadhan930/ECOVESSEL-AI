@@ -1,0 +1,21 @@
+region,shipping_mode,scheduled_shipment_days,product_category,vessel_name,destination
+Southeast Asia,Container Vessel,5,Electronics,MV Indo Progress,East Asia
+Oceania,LNG Tanker,7,Gases,LNG Aquatica,Japan
+Western Europe,Dry Bulk Vessel,24,Dry Bulk Cargo,SS Boreas Bulker,North America
+Southeast Asia,Container Vessel,4,Chemicals,MV Nusantara Raider,Japan
+North America,Container Vessel,14,Electronics,MV Echo Horizon,East Asia
+Oceania,LNG Tanker,6,Gases,LNG Pacific Pioneer,East Asia
+Western Europe,Container Vessel,18,General Cargo,MV Rhine Clipper,North America
+Southeast Asia,Dry Bulk Vessel,8,Dry Bulk Cargo,SS Malacca Straits,East Asia
+Southeast Asia,LNG Tanker,5,Gases,LNG Nusantara Gas,Japan
+North America,Container Vessel,12,Chemicals,MV Atlantic Shield,Western Europe
+Western Europe,Container Vessel,10,Electronics,MV Euro Wave,East Asia
+Oceania,Dry Bulk Vessel,11,Dry Bulk Cargo,SS Southern Cross,Japan
+Southeast Asia,Container Vessel,3,Gases,MV Batam Express,East Asia
+Western Europe,LNG Tanker,22,Gases,LNG Northern Aurora,Japan
+Southeast Asia,Container Vessel,16,General Cargo,MV Padang Voyager,North America
+North America,Dry Bulk Vessel,15,Dry Bulk Cargo,SS Hudson Carrier,Western Europe
+Oceania,Container Vessel,9,Chemicals,MV Tasman Guardian,East Asia
+Southeast Asia,LNG Tanker,11,Gases,LNG Celebes Sea,Western Europe
+Western Europe,Container Vessel,4,Electronics,MV Baltic Vector,Western Europe
+Southeast Asia,Dry Bulk Vessel,8,General Cargo,SS Sunda Strait,Japan

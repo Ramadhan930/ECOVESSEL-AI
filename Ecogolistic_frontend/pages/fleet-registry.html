@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChainGuard // Fleet Operational Registry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="registry">
+    <div class="app-layout">
+        <aside class="noir-sidebar">
+            <div class="sidebar-brand"><h2>ECOVESSEL//AI</h2><span>V2.5.0 Maritime Live</span></div>
+            <nav class="sidebar-nav">
+                <a href="../index.html" class="nav-btn" style="border: 1px dashed #ef4444; color: #ef4444;">⚓ UPLOAD MANIFEST</a>
+                <a href="fleet-registry.html" class="nav-btn active">FLEET REGISTRY</a>
+                <a href="ai-forecast.html" class="nav-btn">AI RISK FORECAST</a>
+                <a href="suppliers.html" class="nav-btn">SUPPLIER NETWORK</a>
+                <a href="sustainability.html" class="nav-btn">SUSTAINABILITY AUDIT</a>
+                <a href="active-alerts.html" class="nav-btn">ACTIVE ALERTS</a>
+                <a href="trend-analysis.html" class="nav-btn">TREND ANALYSIS</a>
+            </nav>
+            <div class="sidebar-footer"><p>LOC: PADANG, ID</p><span id="live-clock">00:00:00 WIB</span></div>
+        </aside>
+        <div class="main-content">
+            <header class="noir-header"><div><h1>FLEET REGISTRY</h1><p class="status-tag">VISUAL TRACKING PLATFORM ACTIVE</p></div></header>
+            
+            <section class="metrics-row">
+                <div class="card-metric"><span class="label">ACTIVE VESSELS</span><h2 id="metric-total">0</h2></div>
+                <div class="card-metric"><span class="label">AVG CO₂ EMISSION</span><h2 id="metric-co2">0 t</h2></div>
+                <div class="card-metric"><span class="label">CRITICAL RISKS</span><h2 id="metric-risk">0</h2></div>
+                <div class="card-metric"><span class="label">ESG COMPLIANCE</span><h2 id="metric-esg">100%</h2></div>
+            </section>
+
+            <div class="content-layout" style="grid-template-columns: 1fr;">
+                <div class="noir-box" style="margin-bottom: 24px;">
+                    <div class="panel-header"><h4>TRUE MARITIME SHIPPING CHANNEL VISUALIZER</h4></div>
+                    
+                    <div class="map-wrapper-noir" id="map-bundle">
+                        <div class="noir-map-simulation" id="noir-map" style="height: 400px; flex: 1;"></div>
+                        
+                        <div id="map-table-overlay" class="map-floating-table">
+                            <h4>QUICK SELECTOR</h4>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr><th>VESSEL</th><th>ORIGIN</th><th>RISK</th></tr>
+                                    </thead>
+                                    <tbody id="overlay-table-body"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-panel">
+                    <div class="panel-header"><h3>LIVE OPERATIONAL MANIFEST LOGS</h3><span class="endpoint-badge">DATABASE STATUS: LIVE</span></div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>VESSEL HASH</th>
+                                    <th>ORIGIN NODE</th>
+                                    <th>DESTINATION</th>
+                                    <th>FLEET TYPE</th>
+                                    <th>CARBON EMISSION</th>
+                                    <th>RISK STATUS</th>
+                                    <th>ACTIONS</th> </tr>
+                            </thead>
+                            <tbody id="shipment-table-body">
+                                <tr><td colspan="7" class="table-loading">Awaiting data injection sequence...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-modal" class="noir-box" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index:100000; width:450px; background:#18181b; padding:24px; border:4px solid #fff; box-shadow: 0 0 0 9999px rgba(0,0,0,0.75); max-height: 90vh; overflow-y: auto;">
+    <div class="panel-header"><h3>EDIT SHIPMENT MANIFEST</h3></div>
+    <input type="hidden" id="edit-shipment-id">
+    
+    <label style="font-family:var(--font-mono); font-size:11px; display:block; margin:12px 0 6px;">ORIGIN REGION:</label>
+    <select id="edit-origin" class="nav-btn" style="width:100%; color:#fff; background:#000; padding:10px;">
+        <option value="Southeast Asia">Southeast Asia</option>
+        <option value="Oceania">Oceania</option>
+        <option value="Western Europe">Western Europe</option>
+        <option value="North America">North America</option>
+    </select>
+
+    <label style="font-family:var(--font-mono); font-size:11px; display:block; margin:12px 0 6px;">DESTINATION REGION:</label>
+    <select id="edit-destination" class="nav-btn" style="width:100%; color:#fff; background:#000; padding:10px;">
+        <option value="East Asia">East Asia</option>
+        <option value="Japan">Japan</option>
+        <option value="North America">North America</option>
+        <option value="Western Europe">Western Europe</option>
+    </select>
+    
+    <label style="font-family:var(--font-mono); font-size:11px; display:block; margin:12px 0 6px;">SHIPPING MODE:</label>
+    <select id="edit-mode" class="nav-btn" style="width:100%; color:#fff; background:#000; padding:10px;">
+        <option value="Container Vessel">Container Vessel</option>
+        <option value="LNG Tanker">LNG Tanker</option>
+        <option value="Dry Bulk Vessel">Dry Bulk Vessel</option>
+        <option value="Road Trucking">Road Trucking</option>
+        <option value="Rail Freight">Rail Freight</option>
+        <option value="Air Freight">Air Freight</option>
+    </select>
+
+    <label style="font-family:var(--font-mono); font-size:11px; display:block; margin:12px 0 6px;">WEIGHT (KG):</label>
+    <input type="number" step="0.1" id="edit-weight" class="nav-btn" style="width:100%; color:#fff; background:#000; padding:10px;" placeholder="e.g. 1500.5">
+
+    <label style="font-family:var(--font-mono); font-size:11px; display:block; margin:12px 0 6px;">DISTANCE (KM):</label>
+    <input type="number" step="0.1" id="edit-distance" class="nav-btn" style="width:100%; color:#fff; background:#000; padding:10px;" placeholder="e.g. 12000.0">
+    
+    <button onclick="submitEditForm()" class="btn-noir-primary" style="margin-top:20px;">SAVE & RECALCULATE</button>
+    <button onclick="closeModal('edit-modal')" class="btn-noir-primary" style="background:#ef4444; border-color:#ef4444; color:#fff; margin-top:8px;">CANCEL</button>
+</div>
+
+    <div id="log-modal" class="noir-box" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index:100000; width:550px; background:#18181b; padding:24px; border:4px solid #fff; max-height: 80vh; overflow-y: auto; box-shadow: 0 0 0 9999px rgba(0,0,0,0.75);">
+        <div class="panel-header"><h3>MUTATION AUDIT LOGS HISTORY</h3></div>
+        <div id="log-content" style="margin-top:16px;"></div>
+        <button onclick="closeModal('log-modal')" class="btn-noir-primary" style="margin-top:20px; background:#fff; color:#000;">CLOSE HISTORY</button>
+    </div>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

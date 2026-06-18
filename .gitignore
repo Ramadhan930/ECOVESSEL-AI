@@ -1,0 +1,93 @@
+# ====================================================================
+# ECOVESSEL.AI — GLOBAL MARITIME PRODUCTION GITIGNORE REGISTER
+# ====================================================================
+
+# 🔐 SECURITY & ENVIRONMENT VARIABLES (KRUSIAL)
+.env
+.env.local
+.env.*.local
+*.env
+*.pem
+*.key
+*.secret
+
+# 🔥 FIREBASE & SUPABASE CREDENTIALS (RAHASIA DATABASES)
+# Menjaga file JSON Service Account Firebase milikmu agar tidak bocor
+*serviceAccount*.json
+*firebase*.json
+credentials.json
+secrets.json
+
+# 🐍 PYTHON / FASTAPI COMPONENT EXCLUSIONS
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 📦 VIRTUAL ENVIRONMENTS (JANGAN DI-UPLOAD KARENA UKURANNYA BESAR)
+.venv/
+venv/
+ENV/
+env/
+ENV.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 🖥️ OPERATING SYSTEM CACHES (MAC & WINDOWS THUMBS)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# 💻 IDE & CODE EDITORS (VS CODE, PYCHARM, SUBLIME)
+.vscode/
+*.code-workspace
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+
+# 📊 DATA PREPARATION & LOCAL TESTING OUTPUTS
+# Mengecualikan log atau dataset CSV uji coba lokal agar repositori tetap ringan
+*.log
+*.csv.bak
+data_testing/
+
+# ⛔ MINICONDA & CONDA ENVIRONMENT EXCLUSIONS
+miniconda/
+miniconda3/
+.miniconda/
+.conda/
+conda-bld/
+
+# 🛑 INSTALLER, EXECUTABLE BINARIES & LARGE ASSETS (FIXED SAKRAL)
+# Mengunci installer Miniconda dan file executable biner agar tidak membengkak
+*.sh
+*.exe
+Miniconda3-latest-Linux-x86_64.sh
+ngrok.exe

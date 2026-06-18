@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChainGuard // Maritime Data Injector</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="uploader">
+    <div class="app-layout" style="grid-template-columns: 1fr; justify-content: center; align-items: center; height: 100vh;">
+        <div class="main-content" style="max-width: 600px; margin: 0 auto; width: 100%;">
+            <header class="noir-header" style="text-align: center; display: block; border-bottom: 4px solid #fff; padding-bottom: 20px; margin-bottom: 30px;">
+                <h1 style="font-size: 32px; letter-spacing: -1px;">ECOVESSEL//AI</h1>
+                <p class="status-tag">ENVIRONMENT: PIJAK x IBM SKILLSBUILD SKENARIO MARITIM</p>
+            </header>
+
+            <div class="noir-box" style="padding: 40px;">
+                <div class="panel-header" style="margin-bottom: 24px;">
+                    <h3>SUNTIK MANIFEST PERKAPALAN (.CSV)</h3>
+                    <span class="endpoint-badge">POST /api/shipments/upload-csv</span>
+                </div>
+                
+                <div class="dropzone" id="csv-dropzone" style="padding: 60px 20px;">
+                    <div class="icon" style="font-size: 48px; margin-bottom: 16px;">⚓</div>
+                    <p class="zone-text" style="font-weight: 700; font-size: 14px;">DRAG & DROP ATAU KLIK DI SINI</p>
+                    <span class="zone-sub" style="font-size: 11px; color: var(--text-gray);">Format file wajib: region, shipping_mode, scheduled_shipment_days, product_category, vessel_name</span>
+                    <input type="file" id="csv-file-input" accept=".csv" style="display: none;">
+                </div>
+                
+                <div id="file-name-preview" class="file-preview" style="margin-top: 16px; font-weight: 700; color: #10b981;"></div>
+                
+                <button id="btn-execute-ml" class="btn-noir-primary" style="display: none; margin-top: 24px; padding: 18px;">
+                    EXECUTE ML PREDICTION MODEL 🧠
+                </button>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="pages/fleet-registry.html" style="font-family: var(--font-mono); color: var(--text-gray); font-size: 12px; text-decoration: underline;">
+                    [ BYPASS DIRECT TO OPERATIONAL DASHBOARD ➔ ]
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

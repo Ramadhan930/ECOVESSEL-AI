@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoVessel // Sustainability Audit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-page="sustainability"> 
+    <div class="app-layout">
+        
+        <aside class="noir-sidebar">
+            <div class="sidebar-brand"><h2>ECOVESSEL//AI</h2><span>V2.5.0 Maritime Live</span></div>
+            <nav class="sidebar-nav">
+                <a href="../index.html" class="nav-btn" style="border: 1px dashed #ef4444; color: #ef4444;">⚓ UPLOAD MANIFEST</a>
+                <a href="fleet-registry.html" class="nav-btn">FLEET REGISTRY</a>
+                <a href="ai-forecast.html" class="nav-btn">AI RISK FORECAST</a>
+                <a href="suppliers.html" class="nav-btn">SUPPLIER NETWORK</a>
+                <a href="sustainability.html" class="nav-btn active">SUSTAINABILITY AUDIT</a>
+                <a href="active-alerts.html" class="nav-btn">ACTIVE ALERTS</a>
+                <a href="trend-analysis.html" class="nav-btn">TREND ANALYSIS</a>
+            </nav>
+            <div class="sidebar-footer"><p>LOC: PADANG, ID</p><span id="live-clock">00:00:00 WIB</span></div>
+        </aside>
+
+        <div class="main-content">
+            <header class="noir-header">
+                <div>
+                    <h1>SUSTAINABILITY AUDIT</h1>
+                    <p class="status-tag">CARBON AUDITOR COMPLIANCE REGISTER</p>
+                </div>
+            </header>
+            
+            <div class="metrics-row" style="margin-bottom: 24px;">
+                <div class="card-metric" style="border-left: 4px solid #10b981;">
+                    <span class="label">IMO 2030 CARBON TARGET</span>
+                    <h2>-40.0%</h2>
+                </div>
+                <div class="card-metric" style="border-left: 4px solid #ffffff;">
+                    <span class="label">ACTIVE PROPULSION AUDIT</span>
+                    <h2>EEDI STAGE 3</h2>
+                </div>
+                <div class="card-metric" style="border-left: 4px solid #f59e0b;">
+                    <span class="label">GLOBAL CII RATING</span>
+                    <h2>A-GRADE</h2>
+                </div>
+                <div class="card-metric" style="border-left: 4px solid #3b82f6;">
+                    <span class="label">SCOPE 3 PROTOCOL</span>
+                    <h2>PAS 2060</h2>
+                </div>
+            </div>
+
+            <div class="main-panel" style="margin-bottom: 24px;">
+                <div class="panel-header">
+                    <h3>ESG EMISSIONS TRACKING & TARGET COMPLIANCE</h3>
+                    <span class="endpoint-badge">REAL-TIME CALCULATION</span>
+                </div>
+                
+                <div class="chart-box">
+                    <h4>LIVE CARBON REDUCTION PERFORMANCE MONITOR</h4>
+                    
+                    <div class="bar-row">
+                        <span class="bar-label">⚡ Vessels CO₂ Emission Volume Accumulator</span>
+                        <div class="bar-track">
+                            <div id="fill-emissions" class="bar-fill high-risk" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bar-row">
+                        <span class="bar-label">🌱 Renewable Alternative Fuel Mix Ratio Target</span>
+                        <div class="bar-track">
+                            <div id="fill-target" class="bar-fill low-risk" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bar-row">
+                        <span class="bar-label">⚓ Sulphur Waste Reduction Threshold Compliance</span>
+                        <div class="bar-track">
+                            <div id="fill-compliance" class="bar-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-panel">
+                <div class="panel-header"><h3>INTERNATIONAL MARITIME DECARBONIZATION MATRIX</h3></div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>REGULATION FRAMEWORK</th>
+                                <th>COMPLIANCE REQ</th>
+                                <th>ECOVESSEL STATUS</th>
+                                <th>NET-ZERO IMPACT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>IMO Short-Term Measure</b></td>
+                                <td>EEXI & CII Verification</td>
+                                <td style="color:#10b981; font-weight:700;">100% COMPLIANT</td>
+                                <td><span class="badge-noir">-20% Carbon Intensity</span></td>
+                            </tr>
+                            <tr>
+                                <td><b>EU Emissions Trading System (EU ETS)</b></td>
+                                <td>Carbon Allowance Tax</td>
+                                <td style="color:#f59e0b; font-weight:700;">MONITORING MODE</td>
+                                <td><span class="badge-noir">Optimized Fuel Routing</span></td>
+                            </tr>
+                            <tr>
+                                <td><b>Poseidon Principles</b></td>
+                                <td>Green Climate Financing</td>
+                                <td style="color:#10b981; font-weight:700;">QUALIFIED</td>
+                                <td><span class="badge-noir">+14.2% Capital Efficiency</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="noir-box-nested" style="margin-top: 20px; font-family: var(--font-mono); font-size: 12px; color: var(--text-gray);">
+                    <p>[ SYSTEM NOTE ] Seluruh perhitungan emisi gas buang armada kapal kontainer dan tanker di atas dievaluasi secara otomatis berdasarkan jarak pelayaran rute maritim nyata yang tersimpan di Cloud Database.</p>
+                </div>
+            </div>
+
+        </div>
+    </div> 
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>
