@@ -1,0 +1,32 @@
+cat << 'EOF' > vercel.json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "Ecogolistic_frontend/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/main.py"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "Ecogolistic_frontend/assets/$1"
+    },
+    {
+      "src": "/pages/(.*)",
+      "dest": "Ecogolistic_frontend/pages/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Ecogolistic_frontend/$1"
+    }
+  ]
+}
