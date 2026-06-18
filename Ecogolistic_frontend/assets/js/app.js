@@ -2,7 +2,7 @@
 let mainMap;
 let allRoutesStorage = []; 
 let cachedShipments = []; // Tempat menyimpan manifest kapal secara global
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "";
 
 const defaultFallbackData = [
     { shipment_id: "VESSEL-01", vessel_name: "MV INDO PROGRESS", origin: "Southeast Asia", destination: "East Asia", shipping_mode: "Container Fleet", co2_emission: 145, risk_status: "High Risk" },
